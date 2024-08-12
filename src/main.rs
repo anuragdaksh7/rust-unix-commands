@@ -1,21 +1,9 @@
+mod ls;
+mod cat;
+
 use std::{env, fs};
-
-fn ls(path: &String) {
-    let dir = String::from(path);
-
-    println!("{dir}");
-    let paths = fs::read_dir(dir).unwrap();
-
-    for path in paths {
-        println!("{}", path.unwrap().path().display())
-    }
-}
-
-fn cat(path: &String) {
-    let contents = fs::read_to_string(path)
-        .expect("Couldn't read file");
-    println!("{contents}");
-}
+use crate::cat::cat;
+use crate::ls::ls;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
