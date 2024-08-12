@@ -4,3 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+chrono = "0.4.38"
+reqwest = { version = "0.12.5", features = ["blocking"] }
+log = "0.4.22"
