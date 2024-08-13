@@ -3,7 +3,6 @@ use std::io::Cursor;
 use reqwest::blocking::Client;
 use std::time::SystemTime;
 use chrono::prelude::*;
-use reqwest::header::{HeaderMap};
 
 pub fn wget(url: &String) -> Result<(), Box<dyn std::error::Error>> {
     let curr_time = SystemTime::now();
@@ -18,7 +17,7 @@ pub fn wget(url: &String) -> Result<(), Box<dyn std::error::Error>> {
     let bytes = response.bytes()?;
     let mut reader = Cursor::new(bytes);
 
-    let mut response = client.get(url).send()?;
+    let response = client.get(url).send()?;
     let headers = response.headers();
     let content_type = headers.get("content-type");
     println!("{:#?}",content_type);

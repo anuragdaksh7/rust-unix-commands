@@ -3,7 +3,7 @@ mod cat;
 mod touch;
 mod wget;
 
-use std::{env, fs};
+use std::env;
 use crate::cat::cat;
 use crate::ls::ls;
 use crate::touch::touch;
