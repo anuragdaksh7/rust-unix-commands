@@ -28,7 +28,7 @@ fn main() {
         }
         "wget" => {
             let url = &args[2];
-            wget(url)
+            let _tmp = wget(url);
         },
         _ => println!("No command selected")
     }
